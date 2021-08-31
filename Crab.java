@@ -19,7 +19,7 @@ public class Crab extends Actor
 // Turn Crab at the edge
 private void turnAtEdge()
 {
-    if(false)
+    if(isAtEdge())
     {
         turn(50);
     }
@@ -35,7 +35,7 @@ private void checkKeyPress()
 //Checks for collisions with other objects
 private void onCollision()
 {
-
+ 
 }
 
 }
