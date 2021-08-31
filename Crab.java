@@ -48,6 +48,12 @@ private void onCollision()
         removeTouching(Worm.class);
         Greenfoot.playSound("slurp.wav");
     }
+    
+    if(isTouching(Lobster.class))
+    {
+        Greenfoot.playSound("au.wav");
+        Greenfoot.stop();
+    }
 
 }
 
