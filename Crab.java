@@ -28,14 +28,27 @@ private void turnAtEdge()
 // Checks for user key presses so user can tun the Crab
 private void checkKeyPress()
 {
+    if(Greenfoot.isKeyDown("right"))
+    {
+        turn(5);
+    }
     
+    if(Greenfoot.isKeyDown("left"))
+    {
+        turn(-5);
+    }
 
 }
 
 //Checks for collisions with other objects
 private void onCollision()
 {
- 
+    if(isTouching(Worm.class))
+    {
+        removeTouching(Worm.class);
+        Greenfoot.playSound("slurp.wav");
+    }
+
 }
 
 }
