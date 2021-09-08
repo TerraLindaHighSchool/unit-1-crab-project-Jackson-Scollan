@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * This class defines a crab. Crabs live on the beach.
  * @auther Jackson Scollan
- * @version 8/26/21
+ * @version 9/8/21
  */
 public class Crab extends Actor
 {
@@ -11,7 +11,7 @@ public class Crab extends Actor
  // This method repeats the following actions 
  public void act()
     {
-        move(3);
+        move(0);
         turnAtEdge();
         checkKeyPress();
         onCollision();
@@ -29,17 +29,28 @@ private void turnAtEdge()
 // Checks for user key presses so user can tun the Crab
 private void checkKeyPress()
 {
-    if(Greenfoot.isKeyDown("right"))
+    if(Greenfoot.isKeyDown("up"))
     {
-        turn(5);
+        setLocation(getX(), getY() - 3);
+    }
+   
+    if(Greenfoot.isKeyDown("down"))
+    {
+        setLocation(getX(), getY() + 3);
     }
     
+    if(Greenfoot.isKeyDown("right"))
+    {
+        setLocation(getX() +3, getY() );
+    }
+   
     if(Greenfoot.isKeyDown("left"))
     {
-        turn(-5);
+        setLocation(getX() -3, getY() );
     }
-
+    
 }
+
 
 //Checks for collisions with other objects
 private void onCollision()
