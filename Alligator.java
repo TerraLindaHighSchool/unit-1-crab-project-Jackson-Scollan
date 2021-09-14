@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The Lobster is the enemy of the crabb
+ * The Alligator is the enemy of the Person
  * 
  * @author Jackson Scollan 
  * @version 8-31-21
  */
-public class Lobster extends Actor
+public class Alligator extends Actor
 {
-// This method repeats the following actions
+
     public void act()
     {
-        move(3);
+        move(5);
         turnAtEdge();
     }
 
@@ -20,7 +20,7 @@ private void turnAtEdge()
 {
     if(isAtEdge())
     {
-        turn(50);
+        turn(150);
     }
 }
 

@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class WinSplash here.
+ * Show GameOverScreen when eaten
  * 
- * Jackson
- * V1
+ * @Jackson Scollan 
+ * @Version 1
  */
-public class WinSplash extends World
+public class GameOverScreen extends World
 {
 
     /**
-     * Constructor for objects of class WinSplash.
+     * Constructor for objects of class GameOverScreen.
      * 
      */
-    public WinSplash()
+    public GameOverScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(560, 560, 1); 

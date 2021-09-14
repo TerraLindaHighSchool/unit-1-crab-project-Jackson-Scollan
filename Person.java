@@ -5,9 +5,9 @@ import greenfoot.*;
  * @auther Jackson Scollan
  * @version 9/8/21
  */
-public class Crab extends Actor
+public class Person extends Actor
 {
- private int numOfWorms = 8;
+ private int numOfGolds = 8;
  // This method repeats the following actions 
  public void act()
     {
@@ -31,22 +31,22 @@ private void checkKeyPress()
 {
     if(Greenfoot.isKeyDown("up"))
     {
-        setLocation(getX(), getY() - 3);
+        setLocation(getX(), getY() - 7);
     }
    
     if(Greenfoot.isKeyDown("down"))
     {
-        setLocation(getX(), getY() + 3);
+        setLocation(getX(), getY() + 7);
     }
     
     if(Greenfoot.isKeyDown("right"))
     {
-        setLocation(getX() +3, getY() );
+        setLocation(getX() +7, getY() );
     }
    
     if(Greenfoot.isKeyDown("left"))
     {
-        setLocation(getX() -3, getY() );
+        setLocation(getX() -7, getY() );
     }
     
 }
@@ -55,27 +55,34 @@ private void checkKeyPress()
 //Checks for collisions with other objects
 private void onCollision()
 {
-    if(isTouching(Worm.class))
+    if(isTouching(Gold.class))
     {
-        removeTouching(Worm.class);
-        Greenfoot.playSound("slurp.wav");
-        numOfWorms--;
+        removeTouching(Gold.class);
+        Greenfoot.playSound("cashregister.mp3");
+        numOfGolds--;
         
         //Winning the game
-        if (numOfWorms == 0)
+        if (numOfGolds == 0)
         {
-            Greenfoot.setWorld(new Winsplash());
-            Greenfoot.playSound("fanfare.wav");
+            Greenfoot.setWorld(new WinSplash());
+            Greenfoot.playSound("cheer2.mp3");
             Greenfoot.stop();
         }
     }
     
-    if(isTouching(Lobster.class))
+    if(isTouching(Alligator.class))
     {
-        Greenfoot.playSound("au.wav");
+        Greenfoot.setWorld(new GameOverScreen());
+        Greenfoot.playSound("gameover.mp3");
         Greenfoot.stop();
     }
-
+    
+     if(isTouching(AlligatorVer.class))
+    {
+        Greenfoot.setWorld(new GameOverScreen());
+        Greenfoot.playSound("gameover.mp3");
+        Greenfoot.stop();
+    }
 }
 
 }
